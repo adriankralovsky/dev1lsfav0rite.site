@@ -8,30 +8,36 @@
         <link rel="stylesheet" href="../assets/css/style.css">
         <link rel="icon" type="image/x-icon" href="../assets/img/vanish.ico">
         <script src="https://kit.fontawesome.com/cda4feef50.js" crossorigin="anonymous"></script>
+        <script src="../assets/js/game.js"></script>
     </head>
-    <body>
+    <body onload="startGame(); checkLevel()">
         <div id="top-bar" class="top-bar">
             <div class="tab-container">
                 <a href="../"><i class="fas fa-play"></i> Start</a>
-                <a class="active"><i class="fa-brands fa-python"></i> Level 1</a>
-                <a class="disabled"><i class="fa-solid fa-calculator"></i> Level 2</a>
-                <a class="disabled"><i class="fa-solid fa-server"></i> Level 3</a>
-                <a class="disabled">&lambda; Level 4</a>
-                <a class="disabled"><i class="fas fa-font"></i> Level 5</a>
-                <a class="disabled"><i class="fas fa-brain"></i> Level 6</a>
-                <a class="disabled"><i class="fas fa-flag"></i> Escape</a>
+                <a id="level1" class="active"><i class="fa-brands fa-python"></i> Level 1</a>
+                <a id="level2" class="disabled"><i class="fa-solid fa-calculator"></i> Level 2</a>
+                <a id="level3" class="disabled"><i class="fa-solid fa-server"></i> Level 3</a>
+                <a id="level4" class="disabled">&lambda; Level 4</a>
+                <a id="level5" class="disabled"><i class="fas fa-font"></i> Level 5</a>
+                <a id="level6" class="disabled"><i class="fas fa-brain"></i> Level 6</a>
+                <a id="level7" class="disabled"><i class="fas fa-flag"></i> Escape</a>
             </div>
         </div>
         <div id="container" class="container">
             <div class="main-container">
-                <div class="game-container" style="display: flex; justify-content: center; padding-top: 35px;">
+                <div class="game-container" style="display: flex; justify-content: center;">
                     <div class="left-pane">
                         <img src="../assets/img/vanishGR.png" style="max-height: 250px;">
                         <p style="font-weight: bold; text-align: center; font-size: 20px;">Mr. Vanish</p>
+                        <p>Every correct guess brings you closer to freedom!</p>
                     </div>
                     <div class="main-pane">
-                        <p id="text1">Good morning, students! To escape this room, you must conquer my challenges.</p>
-                        <p id="text2">First of all, Hangman!</p>
+                        <div id="div-text">
+                            <p id="text1"></p>
+                            <p id="text2"></p>
+                            <p id="text3"></p>
+                            <p id="text4"></p>
+                        </div>
                         <div class="hangman-game">
 
                         </div>
@@ -78,6 +84,27 @@
                 </div>
             </div>
         </div>
+        <script>
+            function startGame() {
+                setTimeout(() => printStringByLetter("Good morning, students!", document.getElementById("text1")), 500);
+                setTimeout(() => printStringByLetter(" To escape this room, you must conquer my challenges.", document.getElementById("text1")), 2500);
+                setTimeout(() => printStringByLetter("First of all", document.getElementById("text2")), 6500);
+                setTimeout(() => printStringByLetter(".", document.getElementById("text2")), 7500);
+                setTimeout(() => printStringByLetter(".", document.getElementById("text2")), 8500);
+                setTimeout(() => printStringByLetter(".", document.getElementById("text2")), 9500);
+                setTimeout(() => printStringByLetter("Hangman!", document.getElementById("text3")), 10500);
+                
+                setTimeout(() => document.getElementById("text1").remove(), 13500);
+                setTimeout(() => document.getElementById("text2").remove(), 13500);
+                setTimeout(() => document.getElementById("text3").remove(), 13500);
+                
+                setTimeout(() => printStringByLetter("Let's test your Python knowledge,", document.getElementById("text4")), 14000);
+                setTimeout(() => printStringByLetter(" shall we?", document.getElementById("text4")), 16000);
+                
+                setTimeout(() => document.getElementById("text4").remove(), 18500);
+                // put there hangman, show letters
+            }
+        </script>
     </body>
 </html>
 
@@ -92,8 +119,8 @@ Vanish (Python Teacher):
 "Welcome, brave students! To escape this room, you must conquer my challenges. First up: Hangman!"
 Mini-game: Python Hangman
 Instructions: Players must guess the letters to reveal Python-related words.
-Word List: iteration, function, syntax.
-(As the players guess letters, show the corr    ect letters appearing in the word).
+Word List: iteration, integer, variable.
+(As the players guess letters, show the correct letters appearing in the word).
 Vanish:
 "Every correct guess brings you closer to freedom! Don’t let the clock run out!"
 
