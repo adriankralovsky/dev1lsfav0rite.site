@@ -40,7 +40,7 @@ body {
 }
 
 .next-button:visited {
-    color: inherit;
+    color: lime;
 }
 
 .next-button:hover {
