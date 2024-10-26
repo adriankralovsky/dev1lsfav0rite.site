@@ -81,7 +81,7 @@ body {
 }
 
 .tab-container a:visited {
-    color: inherit;
+    color: lime;
 }
 
 .tab-container a:hover:not(.disabled) {
