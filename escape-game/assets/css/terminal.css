@@ -1,0 +1,67 @@
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  text-decoration: none;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  background-color: black;
+}
+
+.terminal {
+  position: relative;
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 1rem 1rem;
+  background-color: rgb(0, 0, 0);
+}
+
+.terminal pre {
+  display: flex;
+  flex-direction: row;
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+  color: lime;
+}
+
+.terminal pre p {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.terminal pre:nth-child(1) p {
+  width: 8.1em;
+  animation: typing2 2s steps(80, end);
+}
+
+span {
+  display: block;
+  padding: 1px 0px;
+  background-color: lime;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes typing2 {
+  0% {
+    width: 0;
+  }
+  40% {
+    width: 0;
+  }
+  100% {
+    width: 8.1em;
+  }
+}
+
+@keyframes blink {
+  to {
+    opacity: 0.3;
+  }
+}
