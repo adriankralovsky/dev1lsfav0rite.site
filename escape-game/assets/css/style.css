@@ -47,10 +47,6 @@ body {
     color: lime;
 }
 
-.next-button:link {
-    color: lime;
-}
-
 .next-button:hover {
     background-color: lime;
     color: black;
