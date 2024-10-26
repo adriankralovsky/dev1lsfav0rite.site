@@ -47,7 +47,7 @@ body {
     color: lime;
 }
 
-.next-button:link:not(.active) {
+.next-button:link {
     color: black;
 }
 
