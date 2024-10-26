@@ -128,6 +128,9 @@ body {
     width: 100%;
     height: 100%;
     background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .game-container{
@@ -166,16 +169,22 @@ body {
 }
 
 .hangman-letters-display {
-    display: flex;
+    display: none;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
-.hangman-letter:hover {
+.hangman-letter:hover:enabled {
     background-color: lime;
     color: black;
+}
+
+.hangman-letter:disabled {
+    border-color: var(--disabled);
+    color: var(--disabled);
+    background-color: rgb(27, 27, 27);
 }
 
 .left-pane {
@@ -187,6 +196,28 @@ body {
 }
 
 .main-pane {
-    margin: 0 10px;
+    margin-top: 10px;
+    margin-left: 20px;
     width: 100%;
+}
+
+.command-line {
+    min-height: 75px;
+    height: 75px;
+    border: lime 1px solid;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.game-over {
+    display: none;
+}
+
+#command {
+    font-size: 30px;
+}
+
+#hangman-game {
+    display: none;
 }

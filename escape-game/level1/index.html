@@ -29,7 +29,7 @@
                     <div class="left-pane">
                         <img src="../assets/img/vanishGR.png" style="max-height: 250px;">
                         <p style="font-weight: bold; text-align: center; font-size: 20px;">Mr. Vanish</p>
-                        <p>Every correct guess brings you closer to freedom!</p>
+                        <p id="motivation"></p>
                     </div>
                     <div class="main-pane">
                         <div id="div-text">
@@ -38,46 +38,56 @@
                             <p id="text3"></p>
                             <p id="text4"></p>
                         </div>
-                        <div class="hangman-game">
-
+                        <div id="hangman-game">
+                            <div class="command-line">
+                                <p id="command">~$ </p>
+                            </div>
+                            <div class="guessed-word">
+                                <h3 id="guessed-word" style="font-size: 50px; text-align: center;"></h3>
+                            </div>
+                            <p id="congrats" style="font-size: 30px;"></p>
+                        </div>
+                        <div class="game-over" id="game-over">
+                            <p id="game-over-text"></p>
                         </div>
                     </div>
                 </div>
                 <div class="secondary-game-container">
                     <div class="secondary-game-container-in">
-                        <div class="hangman-letters-display">
+                        <a onclick='restartGame()' id='restart' class='next-button' style="display: none;">RESTART</a>
+                        <a class="next-button" href="../level2/" id="nextLevel" style="display: none;"> NEXT LEVEL</a>
+                        <div class="hangman-letters-display" id="hangman-letters">
                             <div>
-                                <button class="hangman-letter" id="letter-Q">Q</button>
-                                <button class="hangman-letter" id="letter-W">W</button>
-                                <button class="hangman-letter" id="letter-E">E</button>
-                                <button class="hangman-letter" id="letter-R">R</button>
-                                <button class="hangman-letter" id="letter-T">T</button>
-                                <button class="hangman-letter" id="letter-Y">Y</button>
-                                <button class="hangman-letter" id="letter-U">U</button>
-                                <button class="hangman-letter" id="letter-I">I</button>
-                                <button class="hangman-letter" id="letter-O">O</button>
-                                <button class="hangman-letter" id="letter-P">P</button>
+                                <button class="hangman-letter" id="letter">Q</button>
+                                <button class="hangman-letter" id="letter">W</button>
+                                <button class="hangman-letter" id="letter">E</button>
+                                <button class="hangman-letter" id="letter">R</button>
+                                <button class="hangman-letter" id="letter">T</button>
+                                <button class="hangman-letter" id="letter">Y</button>
+                                <button class="hangman-letter" id="letter">U</button>
+                                <button class="hangman-letter" id="letter">I</button>
+                                <button class="hangman-letter" id="letter">O</button>
+                                <button class="hangman-letter" id="letter">P</button>
                             </div>
                             <div>
-                                <button class="hangman-letter" id="letter-A">A</button>
-                                <button class="hangman-letter" id="letter-S">S</button>
-                                <button class="hangman-letter" id="letter-D">D</button>
-                                <button class="hangman-letter" id="letter-F">F</button>
-                                <button class="hangman-letter" id="letter-G">G</button>
-                                <button class="hangman-letter" id="letter-H">H</button>
-                                <button class="hangman-letter" id="letter-J">J</button>
-                                <button class="hangman-letter" id="letter-K">K</button>
-                                <button class="hangman-letter" id="letter-L">L</button>
+                                <button class="hangman-letter" id="letter">A</button>
+                                <button class="hangman-letter" id="letter">S</button>
+                                <button class="hangman-letter" id="letter">D</button>
+                                <button class="hangman-letter" id="letter">F</button>
+                                <button class="hangman-letter" id="letter">G</button>
+                                <button class="hangman-letter" id="letter">H</button>
+                                <button class="hangman-letter" id="letter">J</button>
+                                <button class="hangman-letter" id="letter">K</button>
+                                <button class="hangman-letter" id="letter">L</button>
                             </div>
                             <div>
-                                <button class="hangman-letter" id="letter-Z">Z</button>
-                                <button class="hangman-letter" id="letter-X">X</button>
-                                <button class="hangman-letter" id="letter-C">C</button>
-                                <button class="hangman-letter" id="letter-V">V</button>
-                                <button class="hangman-letter" id="letter-B">B</button>
-                                <button class="hangman-letter" id="letter-N">N</button>
-                                <button class="hangman-letter" id="letter-M">M</button>
-
+                                <button class="hangman-letter" id="letter">Z</button>
+                                <button class="hangman-letter" id="letter">X</button>
+                                <button class="hangman-letter" id="letter">C</button>
+                                <button class="hangman-letter" id="letter">V</button>
+                                <button class="hangman-letter" id="letter">B</button>
+                                <button class="hangman-letter" id="letter">N</button>
+                                <button class="hangman-letter" id="letter">M</button>
                             </div>
                         </div>
                     </div>
@@ -101,8 +111,12 @@
                 setTimeout(() => printStringByLetter("Let's test your Python knowledge,", document.getElementById("text4")), 14000);
                 setTimeout(() => printStringByLetter(" shall we?", document.getElementById("text4")), 16000);
                 
-                setTimeout(() => document.getElementById("text4").remove(), 18500);
-                // put there hangman, show letters
+                setTimeout(() => document.getElementById("div-text").remove(), 18500);
+                setTimeout(() => hangmanGame(null), 19000)
+                let buttons = document.querySelectorAll("[id='letter']");
+                for(var i = 0; i < buttons.length; i++) {
+                    buttons[i].addEventListener("click", guessLetter);
+                }
             }
         </script>
     </body>
