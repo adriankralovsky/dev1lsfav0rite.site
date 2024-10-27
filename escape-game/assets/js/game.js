@@ -68,7 +68,7 @@ function restartGame() {
     strikes = 0;
     guess = [];
     resetFields();
-    hangmanGame(null);
+    setTimeout(() => hangmanGame(null), 500);
 }
 
 function restartButton() {
