@@ -54,12 +54,14 @@
         </div>
         <script>
             function startGame() {
-                setTimeout(() => printStringByLetter("Ah, ", document.getElementById("text1")), 500);
+                /*setTimeout(() => printStringByLetter("Ah, ", document.getElementById("text1")), 500);
                 setTimeout(() => printStringByLetter("you've made it to the Math Lab!", document.getElementById("text1")), 1300);
                 setTimeout(() => printStringByLetter("To proceed,", document.getElementById("text2")), 3500);
                 setTimeout(() => printStringByLetter(" you must prove your understanding of logic.", document.getElementById("text2")), 4500);
                 setTimeout(() => printStringByLetter("I have a series of statements, and your job is to find their correct negations.", document.getElementById("text3")), 7200);
                 setTimeout(() => printStringByLetter("!!! TO BE DONE !!!", document.getElementById("text4")), 11500);
+                */
+                
             }
         </script>
     </body>
@@ -77,21 +79,17 @@ Instructions: Players are presented with several statements and must select the 
 
 Example Statements:
 
-Statement: "All students are studying Python."
 
-Correct Negation: "Not all students are studying Python."
-Statement: "Some students understand logic gates."
+Statement: "There are at least three students who know Haskell."
+Correct Negation: "There are at most two students who know Haskell."
 
-Correct Negation: "No students understand logic gates."
-Statement: "There is at least one student who knows Haskell."
+Statement: "You are either smart or lucky."
+Correct Negation: "You are not smart and not lucky."
 
-Correct Negation: "No student knows Haskell."
-Statement: "The Math Lab is open every day."
+Statement: "If you know mathematics, then you also know Python."
+Statment: "If you know mathematics, then you don't know Python."
 
-Correct Negation: "The Math Lab is not open every day."
-Statement: "Every problem has a solution."
 
-Correct Negation: "Not every problem has a solution."
 Clay:
 "Negating statements is essential to understanding logic! Read carefully, and don’t let me trick you with any assumptions!"
 
