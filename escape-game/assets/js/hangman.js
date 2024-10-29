@@ -1,36 +1,3 @@
-function printStringByLetter(myString, myDiv) {
-    var index = 0;
-    var intervalId = setInterval(function() {
-        myDiv.innerHTML += myString.charAt(index);
-        index++;
-        if(index == myString.length) {
-            clearInterval(intervalId);
-        }
-    }, 50);
-}
-
-function getCookie(name) {
-    var cookies = document.cookie.split(';');
-    for (var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i].trim();
-        if (cookie.startsWith(name + '=')) {
-            return cookie.substring(name.length + 1);
-        }
-    }
-    return null; 
-}
-
-function checkLevel() {
-    var level = getCookie("level");
-    for (var i = 1; i <= level; i++) {
-        divLevel = document.getElementById(`level${i}`);
-        divLevel.classList.remove("disabled");
-        if (!divLevel.classList.contains("active")){
-            divLevel.href = `../level${i}`;
-        }
-    }
-}
-
 function showHangman() {
     // Show game
     document.getElementById("hangman-game").style.display = "block";
@@ -85,6 +52,7 @@ function gameOver() {
 
 function congratulations() {
     if (guessed_num < 3) {
+        strikes = 0;
         setTimeout(() => printStringByLetter("Congratulations! ", document.getElementById("congrats")), 500);
         setTimeout(() => printStringByLetter("You're doing well!", document.getElementById("congrats")), 1500);
         setTimeout(() => hangmanGame(null), 3500);
@@ -117,7 +85,7 @@ function hangmanGame(letter) {
                 guess[i] = "_";
             }
             init = false;
-            if (guessed_num == 1) {
+            if (guessed_num == 1 && document.getElementById("motivation").innerHTML == "" ) {
                 printStringByLetter("Every correct guess brings you closer to freedom!", document.getElementById("motivation"));
             }
         }
