@@ -22,9 +22,19 @@ function resetFields() {
     for(var i = 0; i < buttons.length; i++) {
         buttons[i].disabled = false;
     };
+    document.getElementById("game-over-text1").innerHTML = "";
+    document.getElementById("game-over-text2").innerHTML = "";
+    document.getElementById("game-over-text3").innerHTML = "";
+    document.getElementById("game-over-text4").innerHTML = "";
+    document.getElementById("game-over-text5").innerHTML = "";
+    document.getElementById("game-over-text6").innerHTML = "";
+    document.getElementById("game-over-text7").innerHTML = "";
+    document.getElementById("game-over-text8").innerHTML = "";
+    document.getElementById("game-over-text9").innerHTML = "";
     document.getElementById("game-over-text").innerHTML = "";
     document.getElementById("command").innerHTML = "~$ ";
     document.getElementById("congrats").innerHTML = "";
+    
     document.getElementById("restart").style.display = "none";
 }
 
@@ -44,10 +54,19 @@ function restartButton() {
 
 function gameOver() {
     hideHangman();
-    setTimeout(() => printStringByLetter("Oh no! ", document.getElementById("game-over-text")), 500);
-    setTimeout(() => printStringByLetter("You've failed your very first task! ", document.getElementById("game-over-text")), 1500);
-    setTimeout(() => printStringByLetter("This semester will be very difficult for you...", document.getElementById("game-over-text")), 4000); 
-    setTimeout(() => restartButton(), 7000);
+    setTimeout(() => printStringByLetter("ERROR!ERROR!ERROR!ERROR!ERROR!ERROR!ERROR!ERROR!", document.getElementById("game-over-text1")), 500);
+    setTimeout(() => printStringByLetter("ERROR!ERROR!ERROR!ERROR!ERROR!ERROR!ERROR!ERROR!", document.getElementById("game-over-text2")), 1000);
+    setTimeout(() => printStringByLetter("ERROR!ERROR!ERROR!ERROR!ERROR!ERROR!ERROR!ERROR!", document.getElementById("game-over-text3")), 1500);
+    setTimeout(() => printStringByLetter("ERROR!ERROR!ERROR!ERROR!ERROR!ERROR!ERROR!ERROR!", document.getElementById("game-over-text4")), 2000);
+    setTimeout(() => printStringByLetter("ERROR!ERROR!ERROR!ERROR!ERROR!ERROR!ERROR!ERROR!", document.getElementById("game-over-text5")), 2500);
+    setTimeout(() => printStringByLetter("ERROR!ERROR!ERROR!ERROR!ERROR!ERROR!ERROR!ERROR!", document.getElementById("game-over-text6")), 3000);
+    setTimeout(() => printStringByLetter("ERROR!ERROR!ERROR!ERROR!ERROR!ERROR!ERROR!ERROR!", document.getElementById("game-over-text7")), 3500);
+    setTimeout(() => printStringByLetter("ERROR!ERROR!ERROR!ERROR!ERROR!ERROR!ERROR!ERROR!", document.getElementById("game-over-text8")), 4000);
+    setTimeout(() => printStringByLetter("ERROR!ERROR!ERROR!ERROR!ERROR!ERROR!ERROR!ERROR!", document.getElementById("game-over-text9")), 4500);
+    setTimeout(() => printStringByLetter("Oh no! ", document.getElementById("game-over-text")), 7500);
+    setTimeout(() => printStringByLetter("You've failed your very first task! ", document.getElementById("game-over-text")), 8500);
+    setTimeout(() => printStringByLetter("This semester will be very difficult for you...", document.getElementById("game-over-text")), 11000); 
+    setTimeout(() => restartButton(), 14000);
 }
 
 function congratulations() {
