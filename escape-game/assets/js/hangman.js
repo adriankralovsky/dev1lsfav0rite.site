@@ -46,7 +46,7 @@ function gameOver() {
     hideHangman();
     setTimeout(() => printStringByLetter("Oh no! ", document.getElementById("game-over-text")), 500);
     setTimeout(() => printStringByLetter("You've failed your very first task! ", document.getElementById("game-over-text")), 1500);
-    setTimeout(() => printStringByLetter("This semester will be very difficult for you...", document.getElementById("game-over-text")), 3500); 
+    setTimeout(() => printStringByLetter("This semester will be very difficult for you...", document.getElementById("game-over-text")), 4000); 
     setTimeout(() => restartButton(), 7000);
 }
 

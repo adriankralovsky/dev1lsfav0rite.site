@@ -1,28 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
 <html>
     <head>
         <title>Escape from Nicholas Vanish</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
         <link rel="stylesheet" href="../assets/css/style.css">
+        <link rel="icon" type="image/x-icon" href="../assets/img/vanish.ico">
+        <script src="https://kit.fontawesome.com/cda4feef50.js" crossorigin="anonymous"></script>
+        <script src="../assets/js/negation.js"></script>
+        <script src="../assets/js/scripts.js"></script>
     </head>
-    <body>
-
+    <body onload="startGame(); checkLevel(); setCookie('level', 2)">
+        <div id="top-bar" class="top-bar">
+            <div class="tab-container">
+                <a href="../"><i class="fas fa-play"></i> Start</a>
+                <a id="level1" href="../level1/"><i class="fa-brands fa-python"></i> Level 1</a>
+                <a id="level2" class="active"><i class="fa-solid fa-calculator"></i> Level 2</a>
+                <a id="level3" class="disabled"><i class="fa-solid fa-server"></i> Level 3</a>
+                <a id="level4" class="disabled">&lambda; Level 4</a>
+                <a id="level5" class="disabled"><i class="fas fa-font"></i> Level 5</a>
+                <a id="level6" class="disabled"><i class="fas fa-brain"></i> Level 6</a>
+                <a id="level7" class="disabled"><i class="fas fa-flag"></i> Escape</a>
+            </div>
+        </div>
+        <div id="container" class="container">
+            <div class="main-container">
+                <div class="game-container" style="display: flex; justify-content: center;">
+                    <div class="left-pane">
+                        <img src="../assets/img/clayGR.png" style="max-height: 250px;">
+                        <p style="font-weight: bold; text-align: center; font-size: 20px;">Mr. Clay</p>
+                        <p id="motivation"></p>
+                    </div>
+                    <div class="main-pane">
+                        <div id="div-text">
+                            <p id="text1"></p>
+                            <p id="text2"></p>
+                            <p id="text3"></p>
+                            <p id="text4"></p>
+                        </div>
+                        <div class="game-over" id="game-over">
+                            <p id="game-over-text"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="secondary-game-container">
+                    <div class="secondary-game-container-in">
+                        <a onclick='restartGame()' id='restart' class='next-button' style="display: none;">RESTART</a>
+                        <a class="next-button" href="../level3/" id="nextLevel" style="display: none;"> NEXT LEVEL</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function startGame() {
+                setTimeout(() => printStringByLetter("Ah, ", document.getElementById("text1")), 500);
+                setTimeout(() => printStringByLetter("you've made it to the Math Lab!", document.getElementById("text1")), 1300);
+                setTimeout(() => printStringByLetter("To proceed,", document.getElementById("text2")), 3500);
+                setTimeout(() => printStringByLetter(" you must prove your understanding of logic.", document.getElementById("text2")), 4500);
+                setTimeout(() => printStringByLetter("I have a series of statements, and your job is to find their correct negations.", document.getElementById("text3")), 7200);
+                setTimeout(() => printStringByLetter("!!! TO BE DONE !!!", document.getElementById("text4")), 11500);
+            }
+        </script>
     </body>
 </html>
 
 <!--
 
-Scene 2: The Math Lab
-(Setting: A math classroom filled with charts and diagrams. Clay stands near a large Venn diagram on the board.)
+Scene 2: The Math Lab - Sentence Negations with Clay
+(Setting: The math lab is dimly lit, filled with charts, diagrams, and a large chalkboard. Clay stands in front of the board, arms crossed, looking thoughtful.)
 
 Clay (Math Teacher):
-"You've made it to my domain! To move forward, solve this Venn diagram puzzle!"
-Mini-game: Venn Diagram Drag-and-Drop
-Instructions: Drag names of students into the correct sections based on a riddle.
-Riddle: "Which students are studying both Maths and Python but not Haskell?"
-Student List: Alice (Python & Maths), Bob (Haskell), Carol (Maths)
+"Ah, you've made it to the Math Lab! To proceed, you must prove your understanding of logic. I have a series of statements, and your job is to find their correct negations."
+Mini-game: Sentence Negation Challenge
+Instructions: Players are presented with several statements and must select the correct negation for each one. They’ll need to read carefully to understand what each sentence denies or affirms, applying logical thinking to find the correct answer.
+
+Example Statements:
+
+Statement: "All students are studying Python."
+
+Correct Negation: "Not all students are studying Python."
+Statement: "Some students understand logic gates."
+
+Correct Negation: "No students understand logic gates."
+Statement: "There is at least one student who knows Haskell."
+
+Correct Negation: "No student knows Haskell."
+Statement: "The Math Lab is open every day."
+
+Correct Negation: "The Math Lab is not open every day."
+Statement: "Every problem has a solution."
+
+Correct Negation: "Not every problem has a solution."
 Clay:
-"Use your logical thinking to find the answer! Remember, clarity in understanding is key!"
+"Negating statements is essential to understanding logic! Read carefully, and don’t let me trick you with any assumptions!"
 
 
 -->

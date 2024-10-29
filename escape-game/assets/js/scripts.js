@@ -20,6 +20,22 @@ function getCookie(name) {
     return null; 
 }
 
+function setCookie(name, level) {
+    var cookie = getCookie(name);
+    if (level > cookie) {
+        document.cookie = `level=${level}; path=/escape-game/`
+    }
+}
+
+function checkCookie() {
+    if (getCookie("level") == null)  {
+        document.cookie = "level=1; path=/escape-game/"
+    }
+    else {
+        checkLevel();
+    }
+}
+
 function checkLevel() {
     var level = getCookie("level");
     for (var i = 1; i <= level; i++) {
