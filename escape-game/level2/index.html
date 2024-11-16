@@ -33,6 +33,28 @@
                         <p id="motivation"></p>
                     </div>
                     <div class="main-pane">
+                        <div class="question" id="question-1" style="display: none;">
+                            <h2 style="text-align: center; margin-top: 50px; margin-bottom: 60px;">47% of students fail IB000.</h2>
+                            <hr style="border: 1px dashed lime; margin-bottom: 40px;">
+                            <div class="answers">
+                                <p style="display: none" id="answer1-1"> a) 53% of students pass IB000. </p>
+                                <p style="display: none" id="answer1-2"> b) 47% of students pass IB000. </p>
+                                <p style="display: none" id="answer1-3"> c) 47% of students fail to fail IB000. </p>
+                                <p style="display: none" id="answer1-4"> d) More than (>) 47% or less than (<) 47% of students fail IB000. </p>
+                            </div>
+                        </div>
+
+                        <div class="question" id="question-2" style="display: none;">
+                            <h2 style="text-align: center; margin-top: 50px; margin-bottom: 60px;">If this cow has 10 legs, then every house has a blue roof.</h2>
+                            <hr style="border: 1px dashed lime; margin-bottom: 40px;">
+                            <div class="answers">
+                                <p style="display: none" id="answer2-1"> a) If this cow does not have 10 legs, then every house has a blue roof. </p>
+                                <p style="display: none" id="answer2-2"> b) This cow has 10 legs and at least one house does not have a blue roof. </p>
+                                <p style="display: none" id="answer2-3"> c) Every house has a blue roof or this cow has 10 legs. </p>
+                                <p style="display: none" id="answer2-4"> d) If at least one house does not have a blue roof, then this cow does not have 10 legs. </p>
+                            </div>
+                        </div>
+                        
                         <div id="div-text">
                             <p id="text1"></p>
                             <p id="text2"></p>
@@ -46,7 +68,12 @@
                 </div>
                 <div class="secondary-game-container">
                     <div class="secondary-game-container-in">
-                        <a onclick='restartGame()' id='restart' class='next-button' style="display: none;">RESTART</a>
+                        <div class="pick-an-answer" id="bottom-answers" style="display: none;">
+                            <button id="guess-A">A</button>
+                            <button id="guess-B">B</button>
+                            <button id="guess-C">C</button>
+                            <button id="guess-D">D</button>
+                        </div>
                         <a class="next-button" href="../level3/" id="nextLevel" style="display: none;"> NEXT LEVEL</a>
                     </div>
                 </div>
@@ -54,44 +81,17 @@
         </div>
         <script>
             function startGame() {
-                /*setTimeout(() => printStringByLetter("Ah, ", document.getElementById("text1")), 500);
+                setTimeout(() => printStringByLetter("Ah, ", document.getElementById("text1")), 500);
                 setTimeout(() => printStringByLetter("you've made it to the Math Lab!", document.getElementById("text1")), 1300);
                 setTimeout(() => printStringByLetter("To proceed,", document.getElementById("text2")), 3500);
                 setTimeout(() => printStringByLetter(" you must prove your understanding of logic.", document.getElementById("text2")), 4500);
                 setTimeout(() => printStringByLetter("I have a series of statements, and your job is to find their correct negations.", document.getElementById("text3")), 7200);
-                setTimeout(() => printStringByLetter("!!! TO BE DONE !!!", document.getElementById("text4")), 11500);
-                */
-                
+                setTimeout(() => startNegationGame(), 12000);
+                document.getElementById("guess-A").addEventListener("click", takeAGuess);
+                document.getElementById("guess-B").addEventListener("click", takeAGuess);
+                document.getElementById("guess-C").addEventListener("click", takeAGuess);
+                document.getElementById("guess-D").addEventListener("click", takeAGuess);
             }
         </script>
     </body>
 </html>
-
-<!--
-
-Scene 2: The Math Lab - Sentence Negations with Clay
-(Setting: The math lab is dimly lit, filled with charts, diagrams, and a large chalkboard. Clay stands in front of the board, arms crossed, looking thoughtful.)
-
-Clay (Math Teacher):
-"Ah, you've made it to the Math Lab! To proceed, you must prove your understanding of logic. I have a series of statements, and your job is to find their correct negations."
-Mini-game: Sentence Negation Challenge
-Instructions: Players are presented with several statements and must select the correct negation for each one. They’ll need to read carefully to understand what each sentence denies or affirms, applying logical thinking to find the correct answer.
-
-Example Statements:
-
-
-Statement: "There are at least three students who know Haskell."
-Correct Negation: "There are at most two students who know Haskell."
-
-Statement: "You are either smart or lucky."
-Correct Negation: "You are not smart and not lucky."
-
-Statement: "If you know mathematics, then you also know Python."
-Statment: "If you know mathematics, then you don't know Python."
-
-
-Clay:
-"Negating statements is essential to understanding logic! Read carefully, and don’t let me trick you with any assumptions!"
-
-
--->

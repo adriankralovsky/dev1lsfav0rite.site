@@ -1,19 +1,11 @@
 function showHangman() {
-    // Show game
     document.getElementById("hangman-game").style.display = "block";
-    
-    // Show letter buttons
     document.getElementById("hangman-letters").style.display = "flex";
 }
 
 function hideHangman() {
-    // Hide game
     document.getElementById("hangman-game").style.display = "none";
-    
-    // Hide letter buttons
     document.getElementById("hangman-letters").style.display = "none";
-
-    // Show "Game Over" text
     document.getElementById("game-over").style.display = "block";
 }
 

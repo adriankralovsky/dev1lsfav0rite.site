@@ -217,3 +217,32 @@ body {
 #hangman-game {
     display: none;
 }
+
+.pick-an-answer button {
+    width: 100px;
+    height: 100px;
+    background-color: inherit;
+    color: lime;
+    font-family: inherit;
+    font-size: 70px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: lime;
+    margin: 40px;
+    padding: 12px;
+    transition: .3s;
+}
+
+.pick-an-answer button:hover {
+    background-color: lime;
+    color: black;
+}
+
+.pick-an-answer {
+    display: flex;
+}
+
+.answers p {
+    font-size: 19px;
+    margin-bottom: 35px;
+}
