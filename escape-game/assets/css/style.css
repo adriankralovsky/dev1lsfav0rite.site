@@ -219,6 +219,7 @@ body {
 }
 
 .pick-an-answer button {
+    display: flex;
     width: 100px;
     height: 100px;
     background-color: inherit;
@@ -231,6 +232,8 @@ body {
     margin: 40px;
     padding: 12px;
     transition: .3s;
+    justify-content: center;
+    align-items: center;
 }
 
 .pick-an-answer button:hover {
@@ -245,4 +248,44 @@ body {
 .answers p {
     font-size: 19px;
     margin-bottom: 35px;
+}
+
+.codeblock {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.code {    
+    border-style: solid;
+    padding: 0 20px;
+    border-width: 2px;
+    font-size: 20px;
+    line-height: 40px;
+}
+
+.haskell-answers {
+    display: flex;
+}
+
+.haskell-answers button {
+    display: flex;
+    background-color: inherit;
+    color: lime;
+    font-family: inherit;
+    font-size: 25px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: lime;
+    margin: 30px;
+    padding: 14px;
+    transition: .3s;
+    justify-content: center;
+    align-items: center;
+}
+
+.haskell-answers button:hover {
+    background-color: lime;
+    color: black;
 }

@@ -64,6 +64,7 @@ function gameOver() {
 function congratulations() {
     if (guessed_num < 3) {
         strikes = 0;
+        document.getElementById("hangman-letters").style.display = "none";
         setTimeout(() => printStringByLetter("Congratulations! ", document.getElementById("congrats")), 500);
         setTimeout(() => printStringByLetter("You're doing well!", document.getElementById("congrats")), 1500);
         setTimeout(() => hangmanGame(null), 3500);
@@ -101,6 +102,7 @@ function hangmanGame(letter) {
             }
         }
         else {
+            document.getElementById("hangman-letters").style.display = "flex";
             var wasLetter = false;
             for (var i = 0; i < word.length; i++) {
                 if (word[i] == letter) {

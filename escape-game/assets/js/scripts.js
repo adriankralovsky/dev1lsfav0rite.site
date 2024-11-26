@@ -40,9 +40,19 @@ function checkLevel() {
     var level = getCookie("level");
     for (var i = 1; i <= level; i++) {
         divLevel = document.getElementById(`level${i}`);
-        divLevel.classList.remove("disabled");
-        if (!divLevel.classList.contains("active")){
-            divLevel.href = `../level${i}`;
+        try {
+            divLevel.classList.remove("disabled");
+            if (!divLevel.classList.contains("active")) {
+                if (i != 6) {
+                    divLevel.href = `../level${i}`;
+                }
+                else {
+                    divLevel.href = "../end";
+                }
+            }
+        }
+        catch {
+            continue;
         }
     }
 }

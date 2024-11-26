@@ -1,27 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
 <html>
     <head>
         <title>Escape from Nicholas Vanish</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
         <link rel="stylesheet" href="../assets/css/style.css">
+        <link rel="icon" type="image/x-icon" href="../assets/img/vanish.ico">
+        <script src="https://kit.fontawesome.com/cda4feef50.js" crossorigin="anonymous"></script>
+        <script src="../assets/js/haskell.js"></script>
+        <script src="../assets/js/scripts.js"></script>
     </head>
-    <body>
+    <body onload="startGame(); checkLevel(); setCookie('level', 3)">
+        <div id="top-bar" class="top-bar">
+            <div class="tab-container">
+                <a href="../"><i class="fas fa-play"></i> Start</a>
+                <a id="level1" href="../level1/"><i class="fa-brands fa-python"></i> Level 1</a>
+                <a id="level2" href="../level2/"><i class="fa-solid fa-calculator"></i> Level 2</a>
+                <a id="level3" class="active">&lambda; Level 3</a>
+                <a id="level4" class="disabled"><i class="fas fa-font"></i> Level 4</a>
+                <a id="level5" class="disabled"><i class="fas fa-brain"></i> Level 5</a>
+                <a id="level6" class="disabled"><i class="fas fa-flag"></i> Escape</a>
+            </div>
+        </div>
+        <div id="container" class="container">
+            <div class="main-container">
+                <div class="game-container" style="display: flex; justify-content: center;">
+                    <div class="left-pane">
+                        <img src="../assets/img/deanatGR.png" style="max-height: 250px;">
+                        <p style="font-weight: bold; text-align: center; font-size: 20px;">Mr. Deanat</p>
+                        <p id="motivation"></p>
+                    </div>
+                    <div class="main-pane">            
+                        <div id="div-text">
+                            <p id="text1"></p>
+                            <p id="text2"></p>
+                            <p id="text3"></p>
+                            <p id="text4"></p>
+                            <p id="text5"></p>                            
+                        </div>
+                        <div class="codeblock" id="codeblock">
+                            <div class="code" id="code1" style="display: none;">
+                                <p>
+                                    -- QUESTION 1: FILL IN THE BLANK <br>
+                                    factorial :: Int -> Int <br>
+                                    factorial 0 = 1<br>
+                                    factorial n = n * _______ (n-1)
+                                </p>
+                            </div>
+                            
+                            <div class="code" id="code2" style="display: none;">
+                                <p>
+                                    -- QUESTION 2: WHAT IS THE RESULT OF THIS EXPRESSION? <br>
+                                    fst ("My cat ", "My dog ") ++  snd ("likes ", "hates ") ++ head ["me", "IB015", "itself"]
+                                </p>
+                            </div>
 
+                            <div class="code" id="code3" style="display: none;">
+                                <p>
+                                    -- QUESTION 3: FILL IN THE BLANK <br>
+                                    function1 :: Integer -> String -> _______ <br>
+                                    function1 0 _ = [] <br>
+                                    function1 x y = y:(function1 ((abs x)-1) y)
+                                </p>
+                            </div>
+                        </div>
+                        <div class="game-over" id="game-over">
+                            <p id="game-over-text"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="secondary-game-container">
+                    <div class="secondary-game-container-in">
+                        <div class="haskell-answers" id="answers-1" style="display: none;">
+                            <button id="A">factorial</button>
+                            <button id="B">sum</button>
+                            <button id="C">multiply</button>
+                        </div>
+                        <div class="haskell-answers" id="answers-2" style="display: none;">
+                            <button id="A">My cat hates me</button>
+                            <button id="B">My dog likes IB015</button>
+                            <button id="C">My cat hates itself</button>
+                            <button id="D">My dog hates me</button>
+                        </div>
+                        <div class="haskell-answers" id="answers-3" style="display: none;">
+                            <button id="A">[Integer]</button>
+                            <button id="B">String</button>
+                            <button id="C">[char]</button>
+                            <button id="D">[[char]]</button>
+                        </div>
+                        <a class="next-button" href="../level4/" id="nextLevel" style="display: none;"> NEXT LEVEL </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function startGame() {
+                setTimeout(() => printStringByLetter("Welcome to my domain - Haskell. ", document.getElementById("text1")), 500);
+                setTimeout(() => printStringByLetter("Here, ", document.getElementById("text2")), 3000);
+                setTimeout(() => printStringByLetter("simplicity is an illusion, and abstraction reigns supreme.", document.getElementById("text2")), 3700);
+                
+                setTimeout(() => printStringByLetter("To escape, ", document.getElementById("text3")), 7500);
+                setTimeout(() => printStringByLetter("you must prove your understanding of functional programming and type systems. ", document.getElementById("text3")), 8300);
+                setTimeout(() => printStringByLetter("These challenges will test not only your skill but also your patience.", document.getElementById("text4")), 12500);
+                
+                setTimeout(() => printStringByLetter("Let's begin!", document.getElementById("text5")), 17500);
+                let letters = ['A', 'B', 'C', 'D'];
+                for (var j = 0; j < letters.length; j++) {
+                    let answers = document.querySelectorAll(`[id='${letters[j]}']`);
+                    for(var i = 0; i < answers.length; i++) {
+                        answers[i].addEventListener("click", takeAGuess);
+                    }
+                }
+                setTimeout(() => beginHaskell(), 18500)
+            }
+
+        </script>
     </body>
 </html>
-
-<!--
-
-Scene 3: Logic Gate Dungeon
-(Setting: A dimly lit room with circuit diagrams. Winedays stands beside a circuit board filled with logic gates.)
-
-Winedays (Logic Gates Teacher):
-"Welcome to the logic gate dungeon! Click the gates in the correct order to unlock the next challenge!"
-Mini-game: Logic Gate Sequence
-Instructions: Click gates in the right order based on a provided logic function.
-Logic Requirement: "Output 1 when both inputs are 1."
-(Display gates: AND, OR, NOT. Players must click AND first, then OR.)
-Winedays:
-"Think carefully! Logic is all about the right connections."
-
--->

@@ -7,7 +7,7 @@ function showAnswers(question) {
     setTimeout(() => document.getElementById(`answer${question}-2`).style.display = "block", 1400);
     setTimeout(() => document.getElementById(`answer${question}-3`).style.display = "block", 1600);
     setTimeout(() => document.getElementById(`answer${question}-4`).style.display = "block", 1800);
-    setTimeout(() => document.getElementById("bottom-answers").style.display = "block", 2000);
+    setTimeout(() => document.getElementById("bottom-answers").style.display = "flex", 2000);
 }
 
 function hideText(question) {

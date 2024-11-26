@@ -1,33 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
 <html>
     <head>
         <title>Escape from Nicholas Vanish</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
         <link rel="stylesheet" href="../assets/css/style.css">
+        <link rel="icon" type="image/x-icon" href="../assets/img/vanish.ico">
+        <script src="https://kit.fontawesome.com/cda4feef50.js" crossorigin="anonymous"></script>
+        <script src="../assets/js/logic_gates.js"></script>
+        <script src="../assets/js/scripts.js"></script>
     </head>
-    <body>
-
+    <body onload="startGame(); checkLevel(); setCookie('level', 4)">
+        <div id="top-bar" class="top-bar">
+            <div class="tab-container">
+                <a href="../"><i class="fas fa-play"></i> Start</a>
+                <a id="level1" href="../level1/"><i class="fa-brands fa-python"></i> Level 1</a>
+                <a id="level2" href="../level2/"><i class="fa-solid fa-calculator"></i> Level 2</a>
+                <a id="level3" href="../level3/">&lambda; Level 3</a>
+                <a id="level4" class="active"><i class="fas fa-font"></i> Level 4</a>
+                <a id="level5" class="disabled"><i class="fas fa-brain"></i> Level 5</a>
+                <a id="level6" class="disabled"><i class="fas fa-flag"></i> Escape </a>
+            </div>
+        </div>
+        <div id="container" class="container">
+            <div class="main-container">
+                <div class="game-container" style="display: flex; justify-content: center;">
+                    <div class="left-pane">
+                        <img src="../assets/img/winedaysGR.png" style="max-height: 250px;">
+                        <p style="font-weight: bold; text-align: center; font-size: 20px;">Mr. Winedays</p>
+                        <p id="motivation"></p>
+                    </div>
+                    <div class="main-pane">            
+                        <div id="div-text">
+                            <p id="text1"></p>
+                            <p id="text2"></p>
+                            <p id="text3"></p>
+                            <p id="text4"></p>
+                        </div>
+                        <div class="game-over" id="game-over">
+                            <p id="game-over-text"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="secondary-game-container">
+                    <div class="secondary-game-container-in">
+                        <a class="next-button" href="../level5/" id="nextLevel" style="display: none;"> NEXT LEVEL </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function startGame() {
+                
+            }
+        </script>
     </body>
 </html>
 
 <!--
 
-Scene 4: Haskell Hell
-(Setting: A stark room filled with abstract representations of functions. Deanat stands with a stack of papers.)
+Scene 5: Concash’s Chaos
+(Setting: A cluttered room filled with humorous posters and gadgets. Concash pops in dramatically.)
 
-Deanat (Haskell Teacher):
-"To pass my challenge, complete this Haskell function!"
-Mini-game: Haskell Puzzle
-Instructions: Fill in the missing keyword in the Haskell function using a word bank.
-Function:
-haskell
-Copy code
-factorial :: Int -> Int
-factorial 0 = 1
-factorial n = n * _______ (n-1)
-Word Bank: factorial, sum, multiply
-Deanat:
-"Remember, recursion is key! Choose wisely to escape!"
+Concash (Funny Teacher):
+"Whoa! Look at you! You’ve made it this far! Let’s test your sentence skills!"
+Mini-game: Word Sequence Puzzle
+Instructions: Click words in the correct order to form a coherent sentence.
+Words: “loop,” “executed,” “until,” “condition,” “false.”
+Correct Sentence: “The loop is executed until the condition is false.”
+Concash:
+"Can you whip this mess into shape? Don't be afraid to give it a shot!"
 
 
 -->
