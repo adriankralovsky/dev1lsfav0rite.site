@@ -43,7 +43,7 @@ function checkLevel() {
         try {
             divLevel.classList.remove("disabled");
             if (!divLevel.classList.contains("active")) {
-                if (i != 6) {
+                if (i != 5) {
                     divLevel.href = `../level${i}`;
                 }
                 else {
