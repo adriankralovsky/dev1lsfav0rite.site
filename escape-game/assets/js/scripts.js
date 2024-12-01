@@ -64,7 +64,7 @@ function isPC() {
 }
 
 
-window.onload = function () {
+function checkUserAgent() {
     const gameContent = document.getElementById("game-content");
     const deviceRestriction = document.getElementById("device-restriction");
 
