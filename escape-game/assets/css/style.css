@@ -26,6 +26,14 @@ body {
     align-items: center;
 }
 
+
+#device-restriction {
+    text-align: center;
+    color: red;
+    font-size: 24px;
+    margin-top: 20%;
+}
+
 .next-button {
     background-color: black;
     border: none;
@@ -50,6 +58,7 @@ body {
 .next-button:hover {
     background-color: lime;
     color: black;
+    cursor: pointer;
 }
 
 .top-bar {
@@ -175,6 +184,7 @@ body {
 .hangman-letter:hover:enabled {
     background-color: lime;
     color: black;
+    cursor: pointer;
 }
 
 .hangman-letter:disabled {
@@ -195,6 +205,7 @@ body {
     margin-top: 10px;
     margin-left: 20px;
     width: 100%;
+    position: relative;
 }
 
 .command-line {
@@ -239,6 +250,7 @@ body {
 .pick-an-answer button:hover {
     background-color: lime;
     color: black;
+    cursor: pointer;
 }
 
 .pick-an-answer {
@@ -288,4 +300,88 @@ body {
 .haskell-answers button:hover {
     background-color: lime;
     color: black;
+    cursor: pointer;
+}
+
+.sentences p {
+    font-size: 25px;
+    display: inline-flex;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.sentences span {
+    border-width: 2px;
+    border-style: solid;
+    margin: 0 7px; 
+    min-width: 70px;
+    max-height: 30px;
+}
+
+.sentences span button {
+    all: unset;
+    cursor: pointer;
+    color: inherit;
+    font: inherit;
+}
+
+.check-button {
+    right: 0;
+    bottom: 0;
+    position: absolute;
+}
+
+.check-button button {
+    display: flex;
+    background-color: inherit;
+    color: lime;
+    font-family: inherit;
+    font-size: 25px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: lime;
+    margin-bottom: 10px;
+    padding: 14px;
+    transition: .3s;
+    justify-content: center;
+    align-items: center;
+}
+
+.check-button button:hover {
+    background-color: lime;
+    color: black;
+    cursor: pointer;
+}
+
+.check-button button:disabled {
+    cursor: auto;
+    border-color: var(--disabled);
+    color: var(--disabled);
+    background-color: rgb(27, 27, 27);
+}
+
+.sentence-answers {
+    display: flex;
+}
+
+.sentence-answers button {
+    display: flex;
+    background-color: inherit;
+    color: lime;
+    font-family: inherit;
+    font-size: 25px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: lime;
+    margin: 30px;
+    padding: 14px;
+    transition: .3s;
+    justify-content: center;
+    align-items: center;
+}
+
+.sentence-answers button:hover {
+    background-color: lime;
+    color: black;
+    cursor: pointer;
 }

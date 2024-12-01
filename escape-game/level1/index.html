@@ -12,121 +12,126 @@
         <script src="../assets/js/scripts.js"></script>
     </head>
     <body onload="startGame(); checkLevel()">
-        <div id="top-bar" class="top-bar">
-            <div class="tab-container">
-                <a href="../"><i class="fas fa-play"></i> Start</a>
-                <a id="level1" class="active"><i class="fa-brands fa-python"></i> Level 1</a>
-                <a id="level2" class="disabled"><i class="fa-solid fa-calculator"></i> Level 2</a>
-                <a id="level3" class="disabled">&lambda; Level 3</a>
-                <a id="level4" class="disabled"><i class="fas fa-font"></i> Level 4</a>
-                <a id="level5" class="disabled"><i class="fas fa-brain"></i> Level 5</a>
-                <a id="level6" class="disabled"><i class="fas fa-flag"></i> Escape</a>
+        <div id="game-content">
+            <div id="top-bar" class="top-bar">
+                <div class="tab-container">
+                    <a href="../"><i class="fas fa-play"></i> Start</a>
+                    <a id="level1" class="active"><i class="fa-brands fa-python"></i> Level 1</a>
+                    <a id="level2" class="disabled"><i class="fa-solid fa-calculator"></i> Level 2</a>
+                    <a id="level3" class="disabled">&lambda; Level 3</a>
+                    <a id="level4" class="disabled"><i class="fas fa-font"></i> Level 4</a>
+                    <a id="level5" class="disabled"><i class="fas fa-brain"></i> Level 5</a>
+                    <a id="level6" class="disabled"><i class="fas fa-flag"></i> Escape</a>
+                </div>
             </div>
-        </div>
-        <div id="container" class="container">
-            <div class="main-container">
-                <div class="game-container" style="display: flex; justify-content: center;">
-                    <div class="left-pane">
-                        <img src="../assets/img/vanishGR.png" style="max-height: 250px;">
-                        <p style="font-weight: bold; text-align: center; font-size: 20px;">Mr. Vanish</p>
-                        <p id="motivation"></p>
+            <div id="container" class="container">
+                <div class="main-container">
+                    <div class="game-container" style="display: flex; justify-content: center;">
+                        <div class="left-pane">
+                            <img src="../assets/img/vanishGR.png" style="max-height: 250px;">
+                            <p style="font-weight: bold; text-align: center; font-size: 20px;">Mr. Vanish</p>
+                            <p id="motivation"></p>
+                        </div>
+                        <div class="main-pane">
+                            <div id="div-text">
+                                <p id="text1"></p>
+                                <p id="text2"></p>
+                                <p id="text3"></p>
+                                <p id="text4"></p>
+                            </div>
+                            <div id="hangman-game">
+                                <div class="command-line">
+                                    <p id="command">~$ </p>
+                                </div>
+                                <div class="guessed-word">
+                                    <h3 id="guessed-word" style="font-size: 50px; text-align: center;"></h3>
+                                </div>
+                                <p id="congrats" style="font-size: 30px;"></p>
+                            </div>
+                            <div class="game-over" id="game-over">
+                                <p id="game-over-text1"></p>
+                                <p id="game-over-text2"></p>
+                                <p id="game-over-text3"></p>
+                                <p id="game-over-text4"></p>
+                                <p id="game-over-text5"></p>
+                                <p id="game-over-text6"></p>
+                                <p id="game-over-text7"></p>
+                                <p id="game-over-text8"></p>
+                                <p id="game-over-text9"></p>
+                                <p id="game-over-text"></p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="main-pane">
-                        <div id="div-text">
-                            <p id="text1"></p>
-                            <p id="text2"></p>
-                            <p id="text3"></p>
-                            <p id="text4"></p>
-                        </div>
-                        <div id="hangman-game">
-                            <div class="command-line">
-                                <p id="command">~$ </p>
+                    <div class="secondary-game-container">
+                        <div class="secondary-game-container-in">
+                            <a onclick='restartGame()' id='restart' class='next-button' style="display: none;"> RESTART </a>
+                            <a class="next-button" href="../level2/" id="nextLevel" style="display: none;"> NEXT LEVEL </a>
+                            <div class="hangman-letters-display" id="hangman-letters">
+                                <div>
+                                    <button class="hangman-letter" id="letter">Q</button>
+                                    <button class="hangman-letter" id="letter">W</button>
+                                    <button class="hangman-letter" id="letter">E</button>
+                                    <button class="hangman-letter" id="letter">R</button>
+                                    <button class="hangman-letter" id="letter">T</button>
+                                    <button class="hangman-letter" id="letter">Y</button>
+                                    <button class="hangman-letter" id="letter">U</button>
+                                    <button class="hangman-letter" id="letter">I</button>
+                                    <button class="hangman-letter" id="letter">O</button>
+                                    <button class="hangman-letter" id="letter">P</button>
+                                </div>
+                                <div>
+                                    <button class="hangman-letter" id="letter">A</button>
+                                    <button class="hangman-letter" id="letter">S</button>
+                                    <button class="hangman-letter" id="letter">D</button>
+                                    <button class="hangman-letter" id="letter">F</button>
+                                    <button class="hangman-letter" id="letter">G</button>
+                                    <button class="hangman-letter" id="letter">H</button>
+                                    <button class="hangman-letter" id="letter">J</button>
+                                    <button class="hangman-letter" id="letter">K</button>
+                                    <button class="hangman-letter" id="letter">L</button>
+                                </div>
+                                <div>
+                                    <button class="hangman-letter" id="letter">Z</button>
+                                    <button class="hangman-letter" id="letter">X</button>
+                                    <button class="hangman-letter" id="letter">C</button>
+                                    <button class="hangman-letter" id="letter">V</button>
+                                    <button class="hangman-letter" id="letter">B</button>
+                                    <button class="hangman-letter" id="letter">N</button>
+                                    <button class="hangman-letter" id="letter">M</button>
+                                </div>
                             </div>
-                            <div class="guessed-word">
-                                <h3 id="guessed-word" style="font-size: 50px; text-align: center;"></h3>
-                            </div>
-                            <p id="congrats" style="font-size: 30px;"></p>
-                        </div>
-                        <div class="game-over" id="game-over">
-                            <p id="game-over-text1"></p>
-                            <p id="game-over-text2"></p>
-                            <p id="game-over-text3"></p>
-                            <p id="game-over-text4"></p>
-                            <p id="game-over-text5"></p>
-                            <p id="game-over-text6"></p>
-                            <p id="game-over-text7"></p>
-                            <p id="game-over-text8"></p>
-                            <p id="game-over-text9"></p>
-                            <p id="game-over-text"></p>
                         </div>
                     </div>
                 </div>
-                <div class="secondary-game-container">
-                    <div class="secondary-game-container-in">
-                        <a onclick='restartGame()' id='restart' class='next-button' style="display: none;"> RESTART </a>
-                        <a class="next-button" href="../level2/" id="nextLevel" style="display: none;"> NEXT LEVEL </a>
-                        <div class="hangman-letters-display" id="hangman-letters">
-                            <div>
-                                <button class="hangman-letter" id="letter">Q</button>
-                                <button class="hangman-letter" id="letter">W</button>
-                                <button class="hangman-letter" id="letter">E</button>
-                                <button class="hangman-letter" id="letter">R</button>
-                                <button class="hangman-letter" id="letter">T</button>
-                                <button class="hangman-letter" id="letter">Y</button>
-                                <button class="hangman-letter" id="letter">U</button>
-                                <button class="hangman-letter" id="letter">I</button>
-                                <button class="hangman-letter" id="letter">O</button>
-                                <button class="hangman-letter" id="letter">P</button>
-                            </div>
-                            <div>
-                                <button class="hangman-letter" id="letter">A</button>
-                                <button class="hangman-letter" id="letter">S</button>
-                                <button class="hangman-letter" id="letter">D</button>
-                                <button class="hangman-letter" id="letter">F</button>
-                                <button class="hangman-letter" id="letter">G</button>
-                                <button class="hangman-letter" id="letter">H</button>
-                                <button class="hangman-letter" id="letter">J</button>
-                                <button class="hangman-letter" id="letter">K</button>
-                                <button class="hangman-letter" id="letter">L</button>
-                            </div>
-                            <div>
-                                <button class="hangman-letter" id="letter">Z</button>
-                                <button class="hangman-letter" id="letter">X</button>
-                                <button class="hangman-letter" id="letter">C</button>
-                                <button class="hangman-letter" id="letter">V</button>
-                                <button class="hangman-letter" id="letter">B</button>
-                                <button class="hangman-letter" id="letter">N</button>
-                                <button class="hangman-letter" id="letter">M</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
-        <script>
-            function startGame() {
-                setTimeout(() => printStringByLetter("Good morning, students!", document.getElementById("text1")), 500);
-                setTimeout(() => printStringByLetter(" To escape this room, you must conquer my challenges.", document.getElementById("text1")), 2500);
-                setTimeout(() => printStringByLetter("First of all", document.getElementById("text2")), 6500);
-                setTimeout(() => printStringByLetter(".", document.getElementById("text2")), 7500);
-                setTimeout(() => printStringByLetter(".", document.getElementById("text2")), 8500);
-                setTimeout(() => printStringByLetter(".", document.getElementById("text2")), 9500);
-                setTimeout(() => printStringByLetter("Hangman!", document.getElementById("text3")), 10500);
-                
-                setTimeout(() => document.getElementById("text1").remove(), 13500);
-                setTimeout(() => document.getElementById("text2").remove(), 13500);
-                setTimeout(() => document.getElementById("text3").remove(), 13500);
-                
-                setTimeout(() => printStringByLetter("Let's test your Python knowledge,", document.getElementById("text4")), 14000);
-                setTimeout(() => printStringByLetter(" shall we?", document.getElementById("text4")), 16000);
-                
-                setTimeout(() => document.getElementById("div-text").remove(), 18500);
-                setTimeout(() => hangmanGame(null), 19000)
-                let buttons = document.querySelectorAll("[id='letter']");
-                for(var i = 0; i < buttons.length; i++) {
-                    buttons[i].addEventListener("click", guessLetter);
+            <script>
+                function startGame() {
+                    setTimeout(() => printStringByLetter("Good morning, students!", document.getElementById("text1")), 500);
+                    setTimeout(() => printStringByLetter(" To escape this room, you must conquer my challenges.", document.getElementById("text1")), 2500);
+                    setTimeout(() => printStringByLetter("First of all", document.getElementById("text2")), 6500);
+                    setTimeout(() => printStringByLetter(".", document.getElementById("text2")), 7500);
+                    setTimeout(() => printStringByLetter(".", document.getElementById("text2")), 8500);
+                    setTimeout(() => printStringByLetter(".", document.getElementById("text2")), 9500);
+                    setTimeout(() => printStringByLetter("Hangman!", document.getElementById("text3")), 10500);
+                    
+                    setTimeout(() => document.getElementById("text1").remove(), 13500);
+                    setTimeout(() => document.getElementById("text2").remove(), 13500);
+                    setTimeout(() => document.getElementById("text3").remove(), 13500);
+                    
+                    setTimeout(() => printStringByLetter("Let's test your Python knowledge,", document.getElementById("text4")), 14000);
+                    setTimeout(() => printStringByLetter(" shall we?", document.getElementById("text4")), 16000);
+                    
+                    setTimeout(() => document.getElementById("div-text").remove(), 18500);
+                    setTimeout(() => hangmanGame(null), 19000)
+                    let buttons = document.querySelectorAll("[id='letter']");
+                    for(var i = 0; i < buttons.length; i++) {
+                        buttons[i].addEventListener("click", guessLetter);
+                    }
                 }
-            }
-        </script>
+            </script>
+        </div>
+        <div id="device-restriction" style="display: none;">
+            <h1>In order to play this game, you need to be on PC.</h1>
+        </div>
     </body>
 </html>

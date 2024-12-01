@@ -56,3 +56,25 @@ function checkLevel() {
         }
     }
 }
+
+
+function isPC() {
+    const userAgent = navigator.userAgent.toLowerCase();
+    return !/android|iphone|ipad|ipod|mobile|tablet/.test(userAgent);
+}
+
+
+window.onload = function () {
+    const gameContent = document.getElementById("game-content");
+    const deviceRestriction = document.getElementById("device-restriction");
+
+    if (isPC()) {
+        // Show the game content if the user is on a PC
+        gameContent.style.display = "block";
+        deviceRestriction.style.display = "none";
+    } else {
+        // Show the restriction message if the user is on a mobile or tablet
+        gameContent.style.display = "none";
+        deviceRestriction.style.display = "block";
+    }
+};

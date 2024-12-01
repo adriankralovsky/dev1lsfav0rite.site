@@ -11,51 +11,56 @@
         <script src="../assets/js/scripts.js"></script>
     </head>
     <body onload="checkCookie(); setCookie('level', 7)">
-        <div id="top-bar" class="top-bar">
-            <div class="tab-container">
-                <a href="../intro/"><i class="fas fa-play"></i> Start</a>
-                <a id="level1" href="../level1/"><i class="fa-brands fa-python"></i> Level 1</a>
-                <a id="level2" href="../level2/"><i class="fa-solid fa-calculator"></i> Level 2</a>
-                <a id="level3" href="../level3/">&lambda; Level 3</a>
-                <a id="level4" href="../level4/"><i class="fas fa-font"></i> Level 4</a>
-                <a id="level5" href="../level5/"><i class="fas fa-brain"></i> Level 5</a>
-                <a id="level6" class="active"><i class="fas fa-flag"></i> Escape</a>
+        <div id="game-content">
+            <div id="top-bar" class="top-bar">
+                <div class="tab-container">
+                    <a href="../intro/"><i class="fas fa-play"></i> Start</a>
+                    <a id="level1" href="../level1/"><i class="fa-brands fa-python"></i> Level 1</a>
+                    <a id="level2" href="../level2/"><i class="fa-solid fa-calculator"></i> Level 2</a>
+                    <a id="level3" href="../level3/">&lambda; Level 3</a>
+                    <a id="level4" href="../level4/"><i class="fas fa-font"></i> Level 4</a>
+                    <a id="level5" href="../level5/"><i class="fas fa-brain"></i> Level 5</a>
+                    <a id="level6" class="active"><i class="fas fa-flag"></i> Escape</a>
+                </div>
+            </div>
+            <div id="container" class="container">
+                <div class="main-container">
+                    <div class="game-container" style="display: flex; justify-content: center; padding-top: 35px;">
+                        <div class="welcome-text">
+                            <p>
+                                You did it! You've <strong>ESCAPED FROM NICHOLAS VANISH</strong> and his band of quirky teachers!
+                                Congratulations on solving all the challenges and proving your skills.
+                            </p>
+                                <!---->
+                            <p>
+                                Along the way, you tackled Python riddles, logical negations, Haskell puzzles,
+                                and more; all while sharpening your English and problem-solving abilities.
+                            </p>
+                                <!---->
+                            <p>
+                                We hope you enjoyed this educational adventure. Remember, these challenges weren't
+                                just about escaping; they were about learning, and also thinking critically.
+                            </p>
+                                <!---->
+                            <p>
+                                If you have any feedback, we'd love to hear it.
+                            </p>
+                                <!---->
+                            <p>
+                                And remember, no matter how tough the challenge, you always have the skills to solve it just like today. Thank you and see you in class!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="secondary-game-container">
+                        <div class="secondary-game-container-in">
+                            <a href="https://dev1lsfav0rite.site" class="next-button">GOODBYE</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div id="container" class="container">
-            <div class="main-container">
-                <div class="game-container" style="display: flex; justify-content: center; padding-top: 35px;">
-                    <div class="welcome-text">
-                        <p>
-                            You did it! You've <strong>ESCAPED FROM NICHOLAS VANISH</strong> and his band of quirky teachers!
-                            Congratulations on solving all the challenges and proving your skills.
-                        </p>
-                            <!---->
-                        <p>
-                            Along the way, you tackled Python riddles, logical negations, Haskell puzzles,
-                            and more; all while sharpening your English and problem-solving abilities.
-                        </p>
-                            <!---->
-                        <p>
-                            We hope you enjoyed this educational adventure. Remember, these challenges weren't
-                            just about escaping; they were about learning, and also thinking critically.
-                        </p>
-                            <!---->
-                        <p>
-                            If you have any feedback, we'd love to hear it.
-                        </p>
-                            <!---->
-                        <p>
-                            And remember, no matter how tough the challenge, you always have the skills to solve it just like today. Thank you and see you in class!
-                        </p>
-                    </div>
-                </div>
-                <div class="secondary-game-container">
-                    <div class="secondary-game-container-in">
-                        <a href="https://dev1lsfav0rite.site" class="next-button">GOODBYE</a>
-                    </div>
-                </div>
-            </div>
+        <div id="device-restriction" style="display: none;">
+            <h1>In order to play this game, you need to be on PC.</h1>
         </div>
     </body>
 </html>

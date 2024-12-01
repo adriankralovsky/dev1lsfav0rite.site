@@ -11,61 +11,66 @@
         <script src="../assets/js/scripts.js"></script>
     </head>
     <body onload="checkCookie(); setCookie('level', 1)">
-        <div id="top-bar" class="top-bar">
-            <div class="tab-container">
-                <a class="active"><i class="fas fa-play"></i> Start</a>
-                <a id="level1" href="../level1/"><i class="fa-brands fa-python"></i> Level 1</a>
-                <a id="level2" class="disabled"><i class="fa-solid fa-calculator"></i> Level 2</a>
-                <a id="level3" class="disabled">&lambda; Level 3</a>
-                <a id="level4" class="disabled"><i class="fas fa-font"></i> Level 4</a>
-                <a id="level5" class="disabled"><i class="fas fa-brain"></i> Level 5</a>
-                <a id="level6" class="disabled"><i class="fas fa-flag"></i> Escape</a>
+        <div id="game-content">
+            <div id="top-bar" class="top-bar">
+                <div class="tab-container">
+                    <a class="active"><i class="fas fa-play"></i> Start</a>
+                    <a id="level1" href="../level1/"><i class="fa-brands fa-python"></i> Level 1</a>
+                    <a id="level2" class="disabled"><i class="fa-solid fa-calculator"></i> Level 2</a>
+                    <a id="level3" class="disabled">&lambda; Level 3</a>
+                    <a id="level4" class="disabled"><i class="fas fa-font"></i> Level 4</a>
+                    <a id="level5" class="disabled"><i class="fas fa-brain"></i> Level 5</a>
+                    <a id="level6" class="disabled"><i class="fas fa-flag"></i> Escape</a>
+                </div>
+            </div>
+            <div id="container" class="container">
+                <div class="main-container">
+                    <div class="game-container" style="display: flex; justify-content: center; padding-top: 35px;">
+                        <div class="welcome-text">
+                            <p>Welcome, brave students, to...</p>
+                            
+                            <h1 style="text-align: center;">
+                                Escape from Nicholas Vanish!
+                            </h1>
+                                <!---->
+                            <p>
+                                Today, you find yourselves trapped in the mysterious world of
+                                the Faculty of Informatics.
+                            </p>
+                                <!---->
+                            <p>
+                                To escape, you'll need to conquer a series of challenges set by
+                                our quirky teachers: Nicholas Vanish, Paul Pochkay, Jorge Deanat, 
+                                Piotr Clay, Mikey Winedays, and the ever-chaotic Jonah Concash!
+                            </p>
+                                <!---->
+                            <p>
+                                Each challenge is designed not only to test your knowledge of programming
+                                and logic but also to improve your English skills. Remember, the faster you
+                                solve the puzzles, the sooner you'll break free!
+                            </p>
+                                <!---->
+                            <p>
+                                Are you ready to embark on this educational adventure? Let's dive into the first
+                                challenge and see if you have what it takes to escape!
+                            </p>
+                                <!---->
+                            <h3>
+                                DISCLAIMER! THIS ESCAPE GAME IS NOT SUPPOSED TO MAKE, NOR IS MAKING FUN OF ANY OF THE 
+                                EDUCATORS OF FI MU!
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="secondary-game-container">
+                        <div class="secondary-game-container-in">
+                            <a href="../level1/" class="next-button">ESCAPE</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div id="container" class="container">
-            <div class="main-container">
-                <div class="game-container" style="display: flex; justify-content: center; padding-top: 35px;">
-                    <div class="welcome-text">
-                        <p>Welcome, brave students, to...</p>
-                        
-                        <h1 style="text-align: center;">
-                            Escape from Nicholas Vanish!
-                        </h1>
-                            <!---->
-                        <p>
-                            Today, you find yourselves trapped in the mysterious world of
-                            the Faculty of Informatics.
-                        </p>
-                            <!---->
-                        <p>
-                            To escape, you'll need to conquer a series of challenges set by
-                            our quirky teachers: Nicholas Vanish, Paul Pochkay, Jorge Deanat, 
-                            Piotr Clay, Mikey Winedays, and the ever-chaotic Jonah Concash!
-                        </p>
-                            <!---->
-                        <p>
-                            Each challenge is designed not only to test your knowledge of programming
-                            and logic but also to improve your English skills. Remember, the faster you
-                            solve the puzzles, the sooner you'll break free!
-                        </p>
-                            <!---->
-                        <p>
-                            Are you ready to embark on this educational adventure? Let's dive into the first
-                            challenge and see if you have what it takes to escape!
-                        </p>
-                            <!---->
-                        <h3>
-                            DISCLAIMER! THIS ESCAPE GAME IS NOT SUPPOSED TO MAKE, NOR IS MAKING FUN OF ANY OF THE 
-                            EDUCATORS OF FI MU!
-                        </h3>
-                    </div>
-                </div>
-                <div class="secondary-game-container">
-                    <div class="secondary-game-container-in">
-                        <a href="../level1/" class="next-button">ESCAPE</a>
-                    </div>
-                </div>
-            </div>
+        <div id="device-restriction" style="display: none;">
+            <h1>In order to play this game, you need to be on PC.</h1>
         </div>
     </body>
 </html>
