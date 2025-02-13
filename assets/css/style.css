@@ -96,6 +96,45 @@ i {
     line-height: 30px;
 }
 
+#dock {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100px;
+}
+
+.dock-item {
+    width: 48px;
+    height: 48px;
+    margin: 0 10px;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.dock-item i {
+    display: inline-block;
+    width: 100%;
+}
+
+.dock-item::after {
+    content: attr(data-app);
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.dock-item:hover::after {
+    opacity: 1;
+} 
+
 @media only screen and (max-width: 600px) {
     .welcome-box {
         width: 80vw;
